@@ -2,16 +2,8 @@
 @import '../../additions/mixins.scss';
 
 .header {
+  @include indentation;
   background-color: $header-bg-color;
-  padding: 16px;
-
-  @include on-tablet {
-    padding: 16px 24px 32px;
-  }
-
-  @include on-pc {
-    padding: 16px 80px 32px;
-  }
 
   &__navigation--mobile {
     @include on-tablet-and-pc {
@@ -191,6 +183,7 @@
 
   &__button {
     border-radius: 4px;
+    cursor: pointer;
 
     &--support {
       width: 50%;
@@ -248,12 +241,14 @@
     border-radius: 4px;
     margin-top: 16px;
     @include button-find-styles;
+    cursor: pointer;
   }
 }
 
 
 .main {
   padding: 0 16px;
+  flex-grow: 1;
 
   @include on-tablet {
     padding: 0 24px;
@@ -602,7 +597,6 @@
   padding: 16px;
   margin-top: 24px;
   background-color: #2F88FF;
-  flex: 1;
 
   @include on-tablet {
     padding: 24px;

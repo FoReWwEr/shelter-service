@@ -1,60 +1,27 @@
+import { useNavigate } from 'react-router-dom';
+import { HeaderComponent } from '../auxiliary/HeaderComponent';
 import './HomeScreen.scss';
 
 export const HomeScreen = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className="header">
-        <nav className="header__navigation--mobile"> {/* only mobile */}
-          <img src="/shelter-service/images/home__logo.svg" alt="Home" width='28px' height='28px'/>
-          <button className='header__navigation--mobile--translate'>EN</button>
-          <button className='header__navigation--mobile--account'>
-            <img src="/shelter-service/images/exit__logo.svg" alt="Exit" className='header__navigation--mobile--account--image'/>
-          </button>
-        </nav>
-
-        <nav className='header__navigation'>
-          <div className='header__home'>
-            <img src="/shelter-service/images/home__logo.svg" alt="Home" />
-            <p className='header__home--text'>Притулок житло для переселенців</p>
-          </div>
-
-          <div className='header__actions'>
-            <ul className='header__list'>
-              <li className='header__item'>Підтримати проєкт</li>
-              <li className='header__item'>Надати житло</li>
-            </ul>
-          </div>
-
-          <div className='header__account'>
-            <div className='header__language'>
-              <h4 className='header__language--text'>Мова</h4>
-              <button className='header__language--button'>EN</button>
-            </div>
-
-            <button className='header__account--button'>
-              <img src="/shelter-service/images/exit__logo.svg" alt="Home" />
-              Увійти
-            </button>
-          </div>
-        </nav>
-
-        <div className="header__actions--mobile"> {/* only mobile */}
-          <button className="header__button header__button--support">Підтримати проєкт</button>
-          <button className="header__button header__button--give">Надати житло</button>
-        </div>
+        <HeaderComponent />
 
         <div className='header__information'>
           <div className='header__block'>
             <h1 className='header__text'>Безкоштовний та зручний спосіб знайти житло для переселенців</h1>
-            <button className='header__button header__button--search'>Знайти житло</button>
+            <button className='header__button header__button--search' onClick={() => navigate('/shelter-service/search')}>Знайти житло</button>
           </div>
           <img src="/shelter-service/images/header__image.svg" alt="Picture" className='header__image' />
         </div>
       </header>
 
       <article className='article'> {/* only mobile */}
-        <img src="/shelter-service/images/header__image.svg" alt="Picture" className='article__image'/>
-        <button className='article__button'>Знайти житло</button>
+        <img src="/shelter-service/images/header__image.svg" alt="Picture" className='article__image' />
+        <button className='article__button' onClick={() => navigate('/shelter-service/search')}>Знайти житло</button>
       </article>
 
       <main className='main'>
@@ -63,19 +30,19 @@ export const HomeScreen = () => {
 
           <div className='main__container'>
             <article className='main__card'>
-              <img src="/shelter-service/images/peoples__image.svg" alt="Peoples image" className='main__card--icon'/>
+              <img src="/shelter-service/images/peoples__image.svg" alt="Peoples image" className='main__card--icon' />
               <p className='main__card--text'>Знайшли тимчасове помешкання</p>
               <h3 className='main__card--number'>18331</h3>
             </article>
 
             <article className='main__card'>
-              <img src="/shelter-service/images/document__image.svg" alt="Document image" className='main__card--icon'/>
+              <img src="/shelter-service/images/document__image.svg" alt="Document image" className='main__card--icon' />
               <p className='main__card--text'>Перевірених та активних оголошень</p>
               <h3 className='main__card--number'>987</h3>
             </article>
 
             <article className='main__card'>
-              <img src="/shelter-service/images/bed__image.svg" alt="Bed image" className='main__card--icon'/>
+              <img src="/shelter-service/images/bed__image.svg" alt="Bed image" className='main__card--icon' />
               <p className='main__card--text'>Доступних місць в помешканнях</p>
               <h3 className='main__card--number'>5842</h3>
             </article>
@@ -108,7 +75,7 @@ export const HomeScreen = () => {
 
           <div className='main__support--photos-container'>
             <img src="/shelter-service/images/support--first__image.svg" alt="image" className='main__support--photo' />
-            <img src="/shelter-service/images/support--second__image.svg" alt="image" className='main__support--photo'/>
+            <img src="/shelter-service/images/support--second__image.svg" alt="image" className='main__support--photo' />
           </div>
 
           <div className='main__support--block'>
@@ -116,17 +83,17 @@ export const HomeScreen = () => {
 
             <div className='main__support--container-dotation'>
               <div className='main__support--donation'>
-                <img src="/shelter-service/images/BTC__image.svg" alt="BTC image" className='main__support--donation--photo'/>
+                <img src="/shelter-service/images/BTC__image.svg" alt="BTC image" className='main__support--donation--photo' />
                 <h4 className='main__support--donation--name'>Мережа біткоїн</h4>
               </div>
 
               <div className='main__support--donation'>
-                <img src="/shelter-service/images/monobank__image.svg" alt="Monobank image" className='main__support--donation--photo'/>
+                <img src="/shelter-service/images/monobank__image.svg" alt="Monobank image" className='main__support--donation--photo' />
                 <h4 className='main__support--donation--name'>Монобанк</h4>
               </div>
 
               <div className='main__support--donation'>
-                <img src="/shelter-service/images/privatbank__image.svg" alt="Privatbank image" className='main__support--donation--photo'/>
+                <img src="/shelter-service/images/privatbank__image.svg" alt="Privatbank image" className='main__support--donation--photo' />
                 <h4 className='main__support--donation--name'>Приватбанк</h4>
               </div>
             </div>
@@ -138,7 +105,7 @@ export const HomeScreen = () => {
 
           <div className='main__reviews--container'>
             <article className='main__reviews--card'>
-              <img src="/shelter-service/images/family1__image.svg" alt="Family image" className='main__reviews--card--photo'/>
+              <img src="/shelter-service/images/family1__image.svg" alt="Family image" className='main__reviews--card--photo' />
               <div className='main__reviews--card--stars'>
                 <div className='main__reviews--card--star-1'></div>
                 <div className='main__reviews--card--star-2'></div>
@@ -150,7 +117,7 @@ export const HomeScreen = () => {
             </article>
 
             <article className='main__reviews--card'>
-              <img src="/shelter-service/images/family2__image.svg" alt="Family image" className='main__reviews--card--photo'/>
+              <img src="/shelter-service/images/family2__image.svg" alt="Family image" className='main__reviews--card--photo' />
               <div className='main__reviews--card--stars'>
                 <div className='main__reviews--card--star-1'></div>
                 <div className='main__reviews--card--star-2'></div>
@@ -162,7 +129,7 @@ export const HomeScreen = () => {
             </article>
 
             <article className='main__reviews--card'>
-              <img src="/shelter-service/images/family3__image.svg" alt="Family image" className='main__reviews--card--photo'/>
+              <img src="/shelter-service/images/family3__image.svg" alt="Family image" className='main__reviews--card--photo' />
               <div className='main__reviews--card--stars'>
                 <div className='main__reviews--card--star-1'></div>
                 <div className='main__reviews--card--star-2'></div>
@@ -174,7 +141,7 @@ export const HomeScreen = () => {
             </article>
 
             <article className='main__reviews--card'>
-              <img src="/shelter-service/images/family4__image.svg" alt="Family image" className='main__reviews--card--photo'/>
+              <img src="/shelter-service/images/family4__image.svg" alt="Family image" className='main__reviews--card--photo' />
               <div className='main__reviews--card--stars'>
                 <div className='main__reviews--card--star-1'></div>
                 <div className='main__reviews--card--star-2'></div>
@@ -191,7 +158,7 @@ export const HomeScreen = () => {
       <footer className='footer'>
         <div className='footer__informations'>
           <div className='footer__informations--logo'>
-            <img src="/shelter-service/images/home__logo.svg" alt="Home" className='footer__informations--photo'/>
+            <img src="/shelter-service/images/home__logo.svg" alt="Home" className='footer__informations--photo' />
             <h3 className='footer__informations--text'></h3>
           </div>
 
@@ -202,8 +169,8 @@ export const HomeScreen = () => {
           <p className='footer__support--text'>Підтримати проект</p>
 
           <div className='footer__support--social'>
-            <img src="/shelter-service/images/instagram__image.svg" alt="Instagram image" className='footer__support--social--photo'/>
-            <img src="/shelter-service/images/telegram__image.svg" alt="Telegram image" className='footer__support--social--photo'/>
+            <img src="/shelter-service/images/instagram__image.svg" alt="Instagram image" className='footer__support--social--photo' />
+            <img src="/shelter-service/images/telegram__image.svg" alt="Telegram image" className='footer__support--social--photo' />
           </div>
         </div>
       </footer>
