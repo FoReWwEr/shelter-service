@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import cn from 'classnames';
 
-export const HeaderComponent = () => {
+interface Props {
+  navMargin?: boolean;
+}
+
+export const HeaderComponent = ({ navMargin }: Props) => {
   return (
     <>
       <nav className="header__navigation--mobile"> {/* only mobile */}
@@ -13,7 +18,7 @@ export const HeaderComponent = () => {
         </button>
       </nav>
 
-      <nav className='header__navigation'>
+      <nav className={cn('header__navigation', {'header__navigation-no--margin': navMargin})}>
         <div className='header__home'>
           <Link to="/shelter-service">
             <img src="/shelter-service/images/home__logo.svg" alt="Home" />

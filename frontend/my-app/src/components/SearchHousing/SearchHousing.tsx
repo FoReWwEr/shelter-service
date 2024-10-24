@@ -1,8 +1,11 @@
 import { HeaderComponent } from '../auxiliary/HeaderComponent';
 import { FooterComponent } from '../auxiliary/FooterComponent';
 import './SearchHousing.scss';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const SearchHousing = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className='search-housing'>
@@ -32,7 +35,7 @@ export const SearchHousing = () => {
 
       <main className='list-houses'>
         <div className='list-houses__card'>
-          <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' />
+          <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
 
           <section className='list-houses__info'>
             <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
@@ -54,7 +57,7 @@ export const SearchHousing = () => {
         </div>
 
         <div className='list-houses__card'>
-          <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' />
+        <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
 
           <section className='list-houses__info'>
             <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
@@ -76,7 +79,7 @@ export const SearchHousing = () => {
         </div>
 
         <div className='list-houses__card'>
-          <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' />
+        <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
 
           <section className='list-houses__info'>
             <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>

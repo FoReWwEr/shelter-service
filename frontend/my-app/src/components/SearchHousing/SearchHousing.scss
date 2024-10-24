@@ -122,11 +122,11 @@
 
     @include on-tablet-and-pc {
       flex-direction: row;
-      background-color: white;
+      background-color: #F4F5F6;
     }
 
     @include on-tablet {
-      padding: 0 16px;
+      padding: 0 24px;
     }
 
     @include on-pc {

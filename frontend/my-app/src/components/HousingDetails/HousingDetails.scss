@@ -1,0 +1,203 @@
+@import '../../additions/variables.scss';
+@import '../../additions/mixins.scss';
+
+.housing-details {
+  @include indentation;
+  background-color: $header-bg-color;
+
+  @include on-tablet {
+    padding: 16px 24px;
+  }
+
+  @include on-pc {
+    padding: 16px 80px;
+  }
+}
+
+.housing-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 24px;
+  padding: 0 16px;
+
+  @include on-tablet {
+    padding: 0 24px;
+    column-gap: 16px;
+  }
+
+  @include on-pc {
+    padding: 0 80px;
+    justify-content: flex-end;
+    column-gap: 32px;
+  }
+
+  @include on-tablet-and-pc {
+    flex-direction: row-reverse;
+  }
+
+  &__InfoDescriptionContainer {
+    @include on-pc {
+      width: 65%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__descriptionBlock {
+    background-color: #E0F7FF;
+    margin-top: 16px;
+    padding: 12px 8px;
+
+    @include on-tablet {
+      margin-top: 24px;
+      padding: 24px 16px;
+    }
+  }
+
+  &__Capacity {
+    display: flex;
+    justify-content: space-between;
+
+    &--address {
+      margin: 0;
+      @include font-styles('Lato', 15px, 600, 19.6px, #000);
+    }
+
+    &--places {
+      margin: 0;
+      min-width: 64px;
+      text-align: right;
+      @include font-styles('Lato', 15px, 600, 19.6px, #000);
+    }
+  }
+
+  &__descriptionDetails {
+    &--text {
+      @include font-styles('Lato', 15px, 600, 19.6px, #000);
+      margin: 16px 0 0;
+    }
+
+    &--description {
+      @include font-styles('Lato', 14px, 400, 19.6px, #000);
+      margin: 0;
+
+      @include on-tablet-and-pc {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__ContactInfoContainer {
+    margin-top: 24px;
+
+    @include on-tablet-and-pc {
+      margin-top: 0;
+    }
+  }
+
+  &__PhoneInfoBlock {
+    &--text {
+      @include font-styles('Nutino', 16px, 600, 21.82px, #3C3D3E);
+      margin: 0;
+    }
+
+    &--number {
+      height: 40px;
+      border-radius: 4px;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #43CCF8;
+      margin-top: 10px;
+
+      @include font-styles('Lato', 14px, 400, 19.6px, #F6F6F6);
+      text-align: center;
+
+      @include on-pc {
+        width: 192px;
+        @include font-styles('Lato', 16px, 600, 21.82px, #F6F6F6);
+      }
+    }
+  }
+
+  &__LocationBlock {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    box-sizing: border-box;
+    padding: 8px;
+
+    width: 140px;
+    height: 170px;
+    border-radius: 5px;
+    background-color: $white-color;
+
+    @include on-tablet {
+      width: 175px;
+      height: 275px;
+      margin-top: 40px
+    }
+
+    @include on-pc {
+      height: 291px;
+      width: 191px;
+    }
+  }
+
+  &__text {
+    @include font-styles('Lato', 14px, 400, 19.6px, #000);
+    margin: 0 auto;
+
+    @include on-tablet-and-pc {
+      @include font-styles('Lato', 16px, 500, 24px, #000);
+    }
+  }
+
+  &__AddressBlock {
+    display: flex;
+    align-items: center;
+    column-gap: 12.5px;
+    margin-top: 8px;
+
+    @include on-tablet-and-pc {
+      margin-top: 15px;
+    }
+
+    &--text {
+      @include font-styles('Lato', 14px, 700, 16.8px, #000);
+      margin: 0;
+    }
+  }
+
+  &__distance {
+    @include font-styles('Lato', 14px, 300, 16.8px, #000);
+    margin: 4px 0;
+
+    @include on-tablet-and-pc {
+      margin: 8px 0;
+    }
+  }
+
+  &__locationLogo {
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 58px;
+
+    @include on-tablet-and-pc {
+      width: 63px;
+      height: 90px;
+    }
+  }
+
+  &__map {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+  }
+}
