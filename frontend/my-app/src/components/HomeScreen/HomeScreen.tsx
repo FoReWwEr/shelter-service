@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { HeaderComponent } from '../auxiliary/HeaderComponent';
 import './HomeScreen.scss';
+import { FooterComponent } from '../auxiliary/FooterComponent';
 
 export const HomeScreen = () => {
   const navigate = useNavigate();
@@ -155,25 +156,7 @@ export const HomeScreen = () => {
         </section>
       </main>
 
-      <footer className='footer'>
-        <div className='footer__informations'>
-          <div className='footer__informations--logo'>
-            <img src="/shelter-service/images/home__logo.svg" alt="Home" className='footer__informations--photo' />
-            <h3 className='footer__informations--text'></h3>
-          </div>
-
-          <p className='footer__informations--rights'>Всі права захищені</p>
-        </div>
-
-        <div className='footer__support'>
-          <p className='footer__support--text'>Підтримати проект</p>
-
-          <div className='footer__support--social'>
-            <img src="/shelter-service/images/instagram__image.svg" alt="Instagram image" className='footer__support--social--photo' />
-            <img src="/shelter-service/images/telegram__image.svg" alt="Telegram image" className='footer__support--social--photo' />
-          </div>
-        </div>
-      </footer>
+      <FooterComponent />
     </>
   )
 }

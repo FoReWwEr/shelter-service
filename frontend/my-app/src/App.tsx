@@ -3,6 +3,7 @@ import './App.scss';
 import { HomeScreen } from './components/HomeScreen/HomeScreen';
 import { SearchHousing } from './components/SearchHousing/SearchHousing';
 import { HousingDetails } from './components/HousingDetails/HousingDetails';
+import { ProvideHousing } from './components/ProvideHousing/ProvideHousing';
 import ScrollToTop from './components/auxiliary/ScrollToTop';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/shelter-service' element={<HomeScreen />}></Route>
           <Route path='/shelter-service/search' element={<SearchHousing />}></Route>
           <Route path='/shelter-service/search/:id' element={<HousingDetails />}></Route>
+          <Route path='/shelter-service/provide' element={<ProvideHousing />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -60,8 +60,7 @@
   }
 
   &__Capacity {
-    display: flex;
-    justify-content: space-between;
+    @include flex-alignment(space-between, stretch);
 
     &--address {
       margin: 0;

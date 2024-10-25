@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cn from 'classnames';
 
 interface Props {
@@ -6,6 +6,8 @@ interface Props {
 }
 
 export const HeaderComponent = ({ navMargin }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <nav className="header__navigation--mobile"> {/* only mobile */}
@@ -29,7 +31,7 @@ export const HeaderComponent = ({ navMargin }: Props) => {
         <div className='header__actions'>
           <ul className='header__list'>
             <li className='header__item'>Підтримати проєкт</li>
-            <li className='header__item'>Надати житло</li>
+            <Link to='/shelter-service/provide' style={{ textDecoration: 'none'}}><li className='header__item'>Надати житло</li></Link>
           </ul>
         </div>
 
@@ -48,7 +50,7 @@ export const HeaderComponent = ({ navMargin }: Props) => {
 
       <div className="header__actions--mobile"> {/* only mobile */}
         <button className="header__button header__button--support">Підтримати проєкт</button>
-        <button className="header__button header__button--give">Надати житло</button>
+        <button className="header__button header__button--give" onClick={() => navigate('/shelter-service/provide')}>Надати житло</button>
       </div>
     </>
   );
