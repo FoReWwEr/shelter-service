@@ -4,9 +4,23 @@ import { HomeScreen } from './components/HomeScreen/HomeScreen';
 import { SearchHousing } from './components/SearchHousing/SearchHousing';
 import { HousingDetails } from './components/HousingDetails/HousingDetails';
 import { ProvideHousing } from './components/ProvideHousing/ProvideHousing';
+import { AuthorizationMenu } from './components/AuthorizationMenu/AuthorizationMenu';
 import ScrollToTop from './components/auxiliary/ScrollToTop';
+import { useSelector } from 'react-redux';
+import { RootState } from './redux/store';
+import { useEffect } from 'react';
 
 const App = () => {
+  const isModalOpen = useSelector((state: RootState) => state.modal.isModalOpen);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isModalOpen]);
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -17,6 +31,8 @@ const App = () => {
           <Route path='/shelter-service/search/:id' element={<HousingDetails />}></Route>
           <Route path='/shelter-service/provide' element={<ProvideHousing />}></Route>
         </Routes>
+
+        {isModalOpen && <AuthorizationMenu />}
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,138 @@
+@import '../../additions/variables.scss';
+@import '../../additions/mixins.scss';
+
+.loginMenu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white-color;
+  width: 80%;
+  padding: 16px;
+  row-gap: 16px;
+  border-radius: 8px;
+  z-index: 2;
+
+  @include on-tablet-and-pc {
+    padding: 32px;
+    box-sizing: border-box;
+    width: 60%;
+  }
+
+  &__upperBlock {
+    @include flex-alignment(center, center);
+    flex-direction: column;
+    row-gap: 10px;
+
+    &--text {
+      @include font-styles('Lato', 24px, 600, 36px, #3C3D3E);
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  &__buttonsBlock {
+    display: flex;
+    column-gap: 8px;
+
+    @include on-tablet-and-pc {
+      column-gap: 16px;
+    }
+
+    &--button {
+      width: 50%;
+      height: 40px;
+      border-radius: 4px;
+      border: 2px solid #43CCF8;
+      background-color: $white-color;
+
+      @include on-tablet-and-pc {
+        height: 42px;
+      }
+
+      &--active {
+        background-color: #43CCF8;
+        color: $white-color;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &--input {
+      height: 48px;
+      border-radius: 10px;
+      justify-content: space-between;
+      padding: 16px;
+      border: 1px solid #BDC6CB;
+      outline: none;
+      box-sizing: border-box;
+      @include font-styles('Lato', 16px, 500, 24px, #323333);
+
+      &::placeholder {
+        @include font-styles('Lato', 16px, 500, 24px, #777A7C);
+      }
+    }
+
+    &--block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    &--text {
+      @include font-styles('Lato', 14px, 400, 19.6px, #3C3D3E);
+      margin: 0;
+    }
+
+    &--button {
+      @include flex-alignment(center, center);
+      height: 40px;
+      border-radius: 4px;
+      background-color: #43CCF8;
+      border: none;
+
+      @include font-styles('Lato', 14px, 500, 19.6px, $white-color);
+
+      @include on-tablet-and-pc {
+        height: 42px;
+      }
+    }
+
+    &--image {
+      position: absolute;
+      transform: (-50%);
+      bottom: 84px;
+      right: 32px;
+      cursor: pointer;
+
+      @include on-tablet-and-pc {
+        bottom: 102px;
+        right: 48px;
+      }
+
+      &--register {
+        bottom: 176px;
+
+        @include on-tablet-and-pc {
+          bottom: 194px;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import cn from 'classnames';
+import { useDispatch } from "react-redux";
+import { openModal } from '../../redux/modalSlice';
 
 interface Props {
   navMargin?: boolean;
 }
 
 export const HeaderComponent = ({ navMargin }: Props) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
@@ -15,12 +18,16 @@ export const HeaderComponent = ({ navMargin }: Props) => {
           <img src="/shelter-service/images/home__logo.svg" alt="Home" width='28px' height='28px' />
         </Link>
         <button className='header__navigation--mobile--translate'>EN</button>
-        <button className='header__navigation--mobile--account'>
-          <img src="/shelter-service/images/exit__logo.svg" alt="Exit" className='header__navigation--mobile--account--image' />
+        <button className='header__navigation--mobile--account' onClick={() => dispatch(openModal())}>
+          <img
+            src="/shelter-service/images/exit__logo.svg"
+            alt="Exit"
+            className='header__navigation--mobile--account--image'
+          />
         </button>
       </nav>
 
-      <nav className={cn('header__navigation', {'header__navigation-no--margin': navMargin})}>
+      <nav className={cn('header__navigation', { 'header__navigation-no--margin': navMargin })}>
         <div className='header__home'>
           <Link to="/shelter-service">
             <img src="/shelter-service/images/home__logo.svg" alt="Home" />
@@ -31,7 +38,7 @@ export const HeaderComponent = ({ navMargin }: Props) => {
         <div className='header__actions'>
           <ul className='header__list'>
             <li className='header__item'>Підтримати проєкт</li>
-            <Link to='/shelter-service/provide' style={{ textDecoration: 'none'}}><li className='header__item'>Надати житло</li></Link>
+            <Link to='/shelter-service/provide' style={{ textDecoration: 'none' }}><li className='header__item'>Надати житло</li></Link>
           </ul>
         </div>
 
@@ -41,7 +48,7 @@ export const HeaderComponent = ({ navMargin }: Props) => {
             <button className='header__language--button'>EN</button>
           </div>
 
-          <button className='header__account--button'>
+          <button className='header__account--button' onClick={() => dispatch(openModal())}>
             <img src="/shelter-service/images/exit__logo.svg" alt="Home" />
             Увійти
           </button>
