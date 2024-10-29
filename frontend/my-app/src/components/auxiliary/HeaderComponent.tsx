@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import cn from 'classnames';
 import { useDispatch } from "react-redux";
 import { openModal } from '../../redux/modalSlice';
+import { useState } from "react";
 
 interface Props {
   navMargin?: boolean;
 }
 
 export const HeaderComponent = ({ navMargin }: Props) => {
+  const [checkLogin, setCheckLogin] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -18,7 +20,16 @@ export const HeaderComponent = ({ navMargin }: Props) => {
           <img src="/shelter-service/images/home__logo.svg" alt="Home" width='28px' height='28px' />
         </Link>
         <button className='header__navigation--mobile--translate'>EN</button>
-        <button className='header__navigation--mobile--account' onClick={() => dispatch(openModal())}>
+        <button 
+          className='header__navigation--mobile--account' 
+          onClick={() => {
+            if (!checkLogin) {
+              dispatch(openModal());
+            } else {
+              navigate('/shelter-service/profile');
+            }
+          }}
+          >
           <img
             src="/shelter-service/images/exit__logo.svg"
             alt="Exit"
@@ -48,7 +59,14 @@ export const HeaderComponent = ({ navMargin }: Props) => {
             <button className='header__language--button'>EN</button>
           </div>
 
-          <button className='header__account--button' onClick={() => dispatch(openModal())}>
+          <button className='header__account--button' 
+            onClick={() => {
+              if (!checkLogin) {
+                dispatch(openModal());
+              } else {
+                navigate('/shelter-service/profile');
+              }
+            }}>
             <img src="/shelter-service/images/exit__logo.svg" alt="Home" />
             Увійти
           </button>
@@ -57,7 +75,12 @@ export const HeaderComponent = ({ navMargin }: Props) => {
 
       <div className="header__actions--mobile"> {/* only mobile */}
         <button className="header__button header__button--support">Підтримати проєкт</button>
-        <button className="header__button header__button--give" onClick={() => navigate('/shelter-service/provide')}>Надати житло</button>
+        <button 
+          className="header__button header__button--give" 
+          onClick={() => navigate('/shelter-service/provide')}
+        >
+          Надати житло
+        </button>
       </div>
     </>
   );

@@ -1,0 +1,53 @@
+@import '../../additions/variables.scss';
+@import '../../additions/mixins.scss';
+
+.profile {
+  @include indentation;
+  background-color: $header-bg-color;
+
+  &__text {
+    color: $white-color;
+    text-align: center;
+    @include font-styles('Lato', 24px, 600, 36px, $white-color);
+    margin: 5px 0 0;
+
+    @include on-tablet-and-pc {
+      @include font-styles('Lato', 40px, 400, 52px, $white-color);
+    }
+  }
+
+  &__nav {
+    @include flex-alignment(center, center);
+    margin-top: 8px;
+    column-gap: 16px;
+
+    @include on-tablet {
+      margin-top: 24px;
+    }
+
+    @include on-pc {
+      margin-top: 36px;
+    }
+
+    &--button {
+      width: 150px;
+      height: 40px;
+      border: 1px solid $white-color;
+      border-radius: 5px;
+      background-color: $header-bg-color;
+      @include font-styles('Lato', 14px, 400, 19.6px, $white-color);
+
+      @include on-tablet {
+        width: 240px;
+      }
+
+      @include on-pc {
+        width: 300px;
+      }
+
+      &--active {
+        background-color: #43CCF8;
+      }
+    }
+  }
+}

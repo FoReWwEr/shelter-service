@@ -1,0 +1,207 @@
+@import '../../../additions/variables.scss';
+@import '../../../additions/mixins.scss';
+
+.about {
+  flex-grow: 1;
+  padding: 0 16px;
+
+  @include on-tablet {
+    padding: 0 24px;
+  }
+
+  @include on-pc {
+    padding: 0 80px;
+  }
+
+  &__section-about {
+    margin-top: 16px;
+
+    @include on-tablet {
+      margin-top: 24px;
+    }
+
+    @include on-pc {
+      margin-top: 24px;
+    }
+
+    &--flex {
+      display: flex;
+      flex-direction: row;
+      column-gap: 16px;
+      margin-top: 16px;
+
+      @include on-tablet {
+        column-gap: 22px;
+      }
+
+      @include on-pc {
+        column-gap: 32px;
+        margin-top: 0;
+      }
+    }
+
+    &--me {
+      @include font-styles('Lato', 16px, 600, 24px, #3C3D3E);
+      margin: 0;
+
+      @include on-tablet {
+        @include font-styles('Lato', 24px, 600, 36px, #3C3D3E);
+      }
+
+      @include on-pc {
+        @include font-styles('Lato', 24px, 600, 36px, #3C3D3E);
+      }
+    }
+
+    &--text {
+      @include font-styles('Lato', 14px, 400, 19.6px, #000);
+      margin: 4px 0 0;
+
+      @include on-tablet-and-pc {
+        @include font-styles('Lato', 16px, 500, 24px, #000);
+        margin: 8px 0 0;
+      }
+
+      @include on-pc {
+        margin: 8px 0 0;
+      }
+    }
+  }
+
+  &__image-block {
+    @include flex-alignment(flex-start, center);
+    flex-direction: column;
+    width: 96px;
+
+    @include on-tablet-and-pc {
+      width: 130px;
+    }
+
+    &--name {
+      @include font-styles('Lato', 14px, 400, 19.6px, #3C3D3E);
+      text-align: center;
+      margin: 4px 0 0;
+
+      @include on-tablet-and-pc {
+        @include font-styles('Lato', 16px, 500, 24px, #3C3D3E);
+      }
+    }
+
+    &--image {
+      width: 96px;
+      height: 96px;
+      border-radius: 103px;
+
+      @include on-tablet-and-pc {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 8px;
+    margin-top: 8px;
+    padding: 0 9px;
+    box-sizing: border-box;
+
+    @include on-tablet-and-pc {
+      column-gap: 32px;
+    }
+  }
+
+  &__section-advertisement {
+    margin-top: 24px;
+
+    @include on-tablet-and-pc {
+      margin-top: 32px;
+    }
+
+    &--text {
+      @include font-styles('Lato', 16px, 600, 24px, #3C3D3E);
+      text-align: center;
+      margin: 0;
+
+      @include on-tablet-and-pc {
+        @include font-styles('Lato', 24px, 600, 36px, #3C3D3E);
+      }
+    }
+
+    &--cards-block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      margin-top: 16px;
+
+      @include on-tablet {
+        display: grid;
+        gap: 16px;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
+      }
+
+      @include on-pc {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      background-color: #E0F7FF;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    &--image {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+
+      &--text {
+        @include font-styles('Lato', 16px, 600, 19.6px, #3C3D3E);
+        margin: 14px 0 0;
+      }
+
+      &--container {
+        @include flex-alignment(space-between, center);
+      }
+
+      &--container:last-of-type {
+        margin-top: 8px;
+      }
+
+      &--price,
+      &--seats {
+        @include font-styles('Lato', 14px, 400, 19.6px, #3C3D3E);
+        margin: 0;
+      }
+
+      &--city,
+      &--time {
+        @include font-styles('Lato', 14px, 500, 19.6px, #777A7C);
+        margin: 0;
+      }
+
+      &--block {
+        @include flex-alignment(flex-start, center);
+        column-gap: 4px;
+      }
+
+      &--edit,
+      &--delete {
+        @include font-styles('Lato', 14px, 400, 19.6px, #000);
+        margin: 0;
+      }
+    }
+  }
+}

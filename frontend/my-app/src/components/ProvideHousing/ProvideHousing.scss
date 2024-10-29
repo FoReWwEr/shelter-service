@@ -90,7 +90,7 @@
   &__AddressSection {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 8px;
 
     @include on-tablet-and-pc {
       gap: 0;

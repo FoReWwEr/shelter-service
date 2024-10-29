@@ -5,6 +5,7 @@ import { SearchHousing } from './components/SearchHousing/SearchHousing';
 import { HousingDetails } from './components/HousingDetails/HousingDetails';
 import { ProvideHousing } from './components/ProvideHousing/ProvideHousing';
 import { AuthorizationMenu } from './components/AuthorizationMenu/AuthorizationMenu';
+import { ProfileMenu } from './components/ProfileMenu/ProfileMenu';
 import ScrollToTop from './components/auxiliary/ScrollToTop';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/shelter-service/search' element={<SearchHousing />}></Route>
           <Route path='/shelter-service/search/:id' element={<HousingDetails />}></Route>
           <Route path='/shelter-service/provide' element={<ProvideHousing />}></Route>
+          <Route path='/shelter-service/profile' element={<ProfileMenu />}></Route>
         </Routes>
 
         {isModalOpen && <AuthorizationMenu />}
