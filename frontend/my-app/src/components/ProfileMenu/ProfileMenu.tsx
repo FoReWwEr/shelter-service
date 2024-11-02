@@ -11,24 +11,23 @@ export const ProfileMenu = () => {
 
   return (
     <>
-      <header className="profile">
-        <HeaderComponent />
+      <HeaderComponent>
         <h3 className="profile__text">Профіль</h3>
         <nav className="profile__nav">
-          <button 
-            className={cn('profile__nav--button', {'profile__nav--button--active': view === 'Account'})}
+          <button
+            className={cn('profile__nav--button', { 'profile__nav--button--active': view === 'Account' })}
             onClick={() => setView('Account')}
           >
             Обліковий запис
           </button>
-          <button 
-            className={cn('profile__nav--button', {'profile__nav--button--active': view === 'Edit'})}
+          <button
+            className={cn('profile__nav--button', { 'profile__nav--button--active': view === 'Edit' })}
             onClick={() => setView('Edit')}
           >
             Редагувати профіль
           </button>
         </nav>
-      </header>
+      </HeaderComponent>
 
       {view === 'Account' && <AccountMenu />}
       {view === 'Edit' && <EditMenu />}

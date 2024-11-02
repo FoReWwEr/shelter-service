@@ -2,15 +2,15 @@ import { HeaderComponent } from '../auxiliary/HeaderComponent';
 import { FooterComponent } from '../auxiliary/FooterComponent';
 import './SearchHousing.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { cursorTo } from 'readline';
+import { ContainerComponent } from '../auxiliary/ContainerComponent';
 
 export const SearchHousing = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <header className='search-housing'>
-        <HeaderComponent />
-
+      <HeaderComponent>
         <h1 className='search-housing--main-text'>Знайти житло</h1>
 
         <nav className='search-housing__navigation'>
@@ -31,75 +31,77 @@ export const SearchHousing = () => {
             </button>
           </form>
         </nav>
-      </header>
+      </HeaderComponent>
 
-      <main className='list-houses'>
-        <div className='list-houses__card'>
-          <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
+      <ContainerComponent>
+        <main className='list-houses'>
+          <div className='list-houses__card'>
+            <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')} />
 
-          <section className='list-houses__info'>
-            <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
+            <section className='list-houses__info'>
+              <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
 
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--price'>Безкоштовно</h5>
-              <h5 className='list-houses__info--seats'>2 місця</h5>
-            </div>
-
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--city'>Київ Деснянський</h5>
-
-              <div className='list-houses__info--block'>
-                <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
-                <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--price'>Безкоштовно</h5>
+                <h5 className='list-houses__info--seats'>2 місця</h5>
               </div>
-            </div>
-          </section>
-        </div>
 
-        <div className='list-houses__card'>
-        <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--city'>Київ Деснянський</h5>
 
-          <section className='list-houses__info'>
-            <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
-
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--price'>Безкоштовно</h5>
-              <h5 className='list-houses__info--seats'>2 місця</h5>
-            </div>
-
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--city'>Київ Деснянський</h5>
-
-              <div className='list-houses__info--block'>
-                <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
-                <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+                <div className='list-houses__info--block'>
+                  <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
+                  <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+          </div>
 
-        <div className='list-houses__card'>
-        <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')}/>
+          <div className='list-houses__card'>
+            <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')} />
 
-          <section className='list-houses__info'>
-            <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
+            <section className='list-houses__info'>
+              <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
 
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--price'>Безкоштовно</h5>
-              <h5 className='list-houses__info--seats'>2 місця</h5>
-            </div>
-
-            <div className='list-houses__info--container'>
-              <h5 className='list-houses__info--city'>Київ Деснянський</h5>
-
-              <div className='list-houses__info--block'>
-                <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
-                <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--price'>Безкоштовно</h5>
+                <h5 className='list-houses__info--seats'>2 місця</h5>
               </div>
-            </div>
-          </section>
-        </div>
-      </main>
+
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--city'>Київ Деснянський</h5>
+
+                <div className='list-houses__info--block'>
+                  <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
+                  <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div className='list-houses__card'>
+            <img src="/shelter-service/images/card__image(del).svg" alt="Houme image" className='list-houses__image' onClick={() => navigate('/shelter-service/search/123')} />
+
+            <section className='list-houses__info'>
+              <h5 className='list-houses__info--text'>Безкоштовне житло (і без оплати за комунальні) для переселенців</h5>
+
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--price'>Безкоштовно</h5>
+                <h5 className='list-houses__info--seats'>2 місця</h5>
+              </div>
+
+              <div className='list-houses__info--container'>
+                <h5 className='list-houses__info--city'>Київ Деснянський</h5>
+
+                <div className='list-houses__info--block'>
+                  <h5 className='list-houses__info--time'>Сьогодні о 14:08</h5>
+                  <img src="/shelter-service/images/like__image.svg" alt="Like image" className='list-houses__info--like' />
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </ContainerComponent>
 
       <FooterComponent />
     </>

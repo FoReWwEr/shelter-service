@@ -160,6 +160,7 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
+      cursor: pointer;
     }
 
     &__info {
@@ -195,6 +196,7 @@
       &--block {
         @include flex-alignment(flex-start, center);
         column-gap: 4px;
+        cursor: pointer;
       }
 
       &--edit,

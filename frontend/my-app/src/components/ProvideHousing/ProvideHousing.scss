@@ -2,9 +2,6 @@
 @import '../../additions/mixins.scss';
 
 .provide-housing {
-  @include indentation;
-  background-color: $header-bg-color;
-
   &__text {
     @include font-styles('Lato', 16px, 500, 24px, $white-color);
     margin: 24px 0 0;
@@ -57,6 +54,7 @@
     &--button {
       @include button-find-styles;
       border-radius: 4px;
+      cursor: pointer;
 
       @include on-tablet-and-pc {
         height: 55px;

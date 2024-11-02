@@ -2,8 +2,24 @@
 @import '../../additions/mixins.scss';
 
 .header {
-  @include indentation;
   background-color: $header-bg-color;
+
+  &__content {
+    @include indentation;
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    &-min--padding {
+      @include on-tablet {
+        padding: 16px 24px;
+      }
+
+      @include on-pc {
+        padding: 16px 80px;
+      }
+    }
+  }
 
   &__navigation--mobile {
     @include on-tablet-and-pc {
@@ -21,6 +37,7 @@
       border: 1px solid $white-color;
       border-radius: 2px;
       background-color: #43CCF8;
+      cursor: pointer;
 
       @include font-styles('Lato', 12px, 400, 14.4px, $white-color);
     }
@@ -32,6 +49,7 @@
       border-radius: 5px;
       background-color: #43CCF8;
       border: none;
+      cursor: pointer;
 
       &--image {
         height: 13px;
@@ -100,6 +118,7 @@
 
   &__item {
     @include font-styles('Lato', 14px, 400, 19.6px, $white-color);
+    cursor: pointer;
 
     @include on-pc {
       font-size: 16px;
@@ -127,6 +146,7 @@
       height: 48px;
       width: 48px;
       background-color: #43CCF8;
+      cursor: pointer;
 
       @include font-styles('Lato', 10px, 400, 12px, #F6F6F6);
       border: none;
@@ -137,7 +157,7 @@
         justify-content: space-around;
         flex-direction: row-reverse;
         margin-left: 24px;
-        width: 88px;
+        width: 92px;
         height: 40px;
 
         font-size: 14px;
@@ -160,6 +180,7 @@
       background-color: #43CCF8;
       color: $white-color;
       margin-left: 4px;
+      cursor: pointer;
     }
   }
 
@@ -194,6 +215,7 @@
       height: 36px;
       border: 1px solid $white-color;
       background-color: $header-bg-color;
+      cursor: pointer;
 
       @include font-styles('Lato', 14px, 400, 19.6px, $white-color);
     }
@@ -236,9 +258,10 @@
   &__image {
     object-fit: cover;
     object-position: center;
-    width: 100vw;
+    width: calc(100% + 32px);
     height: 224px;
     margin-left: -16px;
+    margin-right: -16px;
   }
 
   &__button {
@@ -481,6 +504,11 @@
       border-radius: 5px;
       border: 2px solid #43CCF8;
       box-sizing: border-box;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #c0defc;
+      }
 
       &--photo {
         justify-content: flex-start;
@@ -597,17 +625,23 @@
 }
 
 .footer {
-  @include flex-alignment(space-between, stretch);
-  padding: 16px;
-  margin-top: 24px;
+  margin-top: auto;
   background-color: #2F88FF;
 
-  @include on-tablet {
-    padding: 24px;
-  }
+  &__content {
+    @include flex-alignment(space-between, stretch);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
 
-  @include on-pc {
-    padding: 32px 80px;
+    @include on-tablet {
+      padding: 24px;
+    }
+
+    @include on-pc {
+      padding: 32px 80px;
+    }
   }
 
   &__informations {
@@ -669,6 +703,7 @@
 
     &--text {
       @include font-styles('Lato', 13px, 400, normal, $white-color);
+      cursor: pointer;
       margin: 0;
 
       @include on-tablet {

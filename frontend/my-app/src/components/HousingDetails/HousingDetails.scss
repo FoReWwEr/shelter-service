@@ -1,19 +1,6 @@
 @import '../../additions/variables.scss';
 @import '../../additions/mixins.scss';
 
-.housing-details {
-  @include indentation;
-  background-color: $header-bg-color;
-
-  @include on-tablet {
-    padding: 16px 24px;
-  }
-
-  @include on-pc {
-    padding: 16px 80px;
-  }
-}
-
 .housing-info {
   display: flex;
   flex-direction: column;

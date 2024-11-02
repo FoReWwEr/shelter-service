@@ -2,9 +2,6 @@
 @import '../../additions/mixins.scss';
 
 .profile {
-  @include indentation;
-  background-color: $header-bg-color;
-
   &__text {
     color: $white-color;
     text-align: center;
@@ -36,6 +33,7 @@
       border-radius: 5px;
       background-color: $header-bg-color;
       @include font-styles('Lato', 14px, 400, 19.6px, $white-color);
+      cursor: pointer;
 
       @include on-tablet {
         width: 240px;

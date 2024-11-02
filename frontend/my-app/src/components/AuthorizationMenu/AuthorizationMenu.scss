@@ -24,6 +24,7 @@
   row-gap: 16px;
   border-radius: 8px;
   z-index: 2;
+  max-width: 800px;
 
   @include on-tablet-and-pc {
     padding: 32px;
@@ -57,6 +58,7 @@
       border-radius: 4px;
       border: 2px solid #43CCF8;
       background-color: $white-color;
+      cursor: pointer;
 
       @include on-tablet-and-pc {
         height: 42px;
@@ -106,6 +108,7 @@
       border-radius: 4px;
       background-color: #43CCF8;
       border: none;
+      cursor: pointer;
 
       @include font-styles('Lato', 14px, 500, 19.6px, $white-color);
 
