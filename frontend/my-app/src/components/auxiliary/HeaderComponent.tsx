@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const HeaderComponent = ({ navMargin, children }: Props) => {
-  const [checkLogin, setCheckLogin] = useState(true); // управление логин / профиль
+  const [checkLogin, setCheckLogin] = useState(false); // управление логин / профиль
   const navigatetoHelp = useNavigateToHelp();
   const dispatch = useDispatch();
   const navigate = useNavigate();

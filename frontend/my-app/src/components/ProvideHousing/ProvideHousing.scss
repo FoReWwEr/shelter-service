@@ -61,6 +61,10 @@
       }
     }
 
+    &--error {
+      @include error-style;
+    }
+
     &--InforamtionBlock {
       display: flex;
       flex-direction: column;

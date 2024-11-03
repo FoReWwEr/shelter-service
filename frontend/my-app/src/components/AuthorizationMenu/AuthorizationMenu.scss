@@ -32,6 +32,11 @@
     width: 60%;
   }
 
+  &__error {
+    @include error-style;
+    margin: 8px 0 0;
+  }
+
   &__upperBlock {
     @include flex-alignment(center, center);
     flex-direction: column;
@@ -92,6 +97,7 @@
     }
 
     &--block {
+      position: relative;
       display: flex;
       flex-direction: column;
       row-gap: 8px;
@@ -119,23 +125,10 @@
 
     &--image {
       position: absolute;
-      transform: (-50%);
-      bottom: 84px;
-      right: 32px;
+      top: 69%;
+      right: 16px;
+      transform: translateY(-50%);
       cursor: pointer;
-
-      @include on-tablet-and-pc {
-        bottom: 102px;
-        right: 48px;
-      }
-
-      &--register {
-        bottom: 176px;
-
-        @include on-tablet-and-pc {
-          bottom: 194px;
-        }
-      }
     }
   }
 }

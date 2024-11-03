@@ -19,6 +19,10 @@
   @include font-styles('Nutino', 16px, 600, 21.82px, #F6F6F6);
 }
 
+@mixin error-style {
+  @include font-styles('Lato', 14px, 600, 19.6px, rgb(252, 79, 79));
+}
+
 @mixin main-text($margin: 0) {
   @include font-styles('Lato', 40px, 400, 52px, #3C3D3E);
   text-align: center;

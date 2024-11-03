@@ -98,6 +98,12 @@
       margin-top: 0;
     }
 
+    &--error {
+      @include error-style;
+      margin: 8px 0 0;
+      text-align: center;
+    }
+
     &--pc {
       @include on-pc {
         display: flex;
